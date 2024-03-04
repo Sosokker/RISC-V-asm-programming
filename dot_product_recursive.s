@@ -13,7 +13,6 @@ main:
     j exit
 
 dot_product_recursive:
-    # We will store only a2( size )
     addi sp sp -16 # Prepare Stack Pointer
     sw ra 0(sp) # Save ra into stack
     sw a0 4(sp) # Save ra into stack
@@ -21,6 +20,7 @@ dot_product_recursive:
     sw a2 12(sp) # Save ra into stack
     addi t0 x0 1 # t0 = temporary 1
     bne a2 t0 return # If size != 1 then we will call function recursively
+    # Base Case
     addi sp sp 16 # Reset stack pointer
     lw t1 0(a0) # a[0]
     lw t2 0(a1) # b[0]
